@@ -77,6 +77,12 @@ const Home = () => {
       const delRec = main.filter((ele, ind) => ind !== getInd);
       setMain(delRec);
     }, 500);
+
+    setName("");
+    setAddress("");
+    setPassword("");
+    setGender("");
+    setHobby([]);
   };
 
   const togler = (index) => {
