@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Demo from "./Demo";
+import User1 from "./User1";
 
 const User = () => {
   const [user] = useState("rajan");
@@ -11,7 +11,9 @@ const User = () => {
         <User2 getUser={user} />
       </div>
       <div>
-        <Demo />
+      </div>
+      <div className="m-10">
+        <User1 />
       </div>
     </>
   );

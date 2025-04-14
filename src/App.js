@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
@@ -11,12 +11,15 @@ import Class from "./Components/Class";
 import Memo from "./Components/Memo";
 import Practice from "./Components/Practice"
 
-
-
+const UserContext = createContext();
 
 const App = () => {
+
+  const [userName,setUserName] = useState();
+
   return (
     <div>
+      <Context.Provider value={userName}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navbar />}> 
@@ -32,6 +35,7 @@ const App = () => {
           </Route>
         </Routes>
       </BrowserRouter>
+      </Context.Provider>
     </div>
   );
 };
