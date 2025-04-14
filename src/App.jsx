@@ -11,15 +11,15 @@ import Class from "./Components/Class";
 import Memo from "./Components/Memo";
 import Practice from "./Components/Practice"
 
-const UserContext = createContext();
+export const UserContext = createContext();
 
 const App = () => {
 
-  const [userName,setUserName] = useState();
+   const [userName] = useState("Rjan");
 
   return (
     <div>
-      <Context.Provider value={userName}>
+      <UserContext.Provider value={userName}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navbar />}> 
@@ -35,7 +35,7 @@ const App = () => {
           </Route>
         </Routes>
       </BrowserRouter>
-      </Context.Provider>
+      </UserContext.Provider>
     </div>
   );
 };
