@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { UserContext } from "../App";
 
 const Class = () => {
   const [userName, setUsername] = useState();
@@ -13,6 +14,8 @@ const Class = () => {
     setUsername("");
     setSaveUname(removeUname);
   };
+
+  const {useName} = useContext(UserContext)
 
   return (
     <div className="container mt-4">
@@ -37,7 +40,7 @@ const Class = () => {
       <div>
         <p className="mt-3 ">{saveUname}</p>
       </div>
-      <p></p>
+      <p>Created By : - {useName} </p>Z
     </div>
   );
 };

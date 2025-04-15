@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 import { memo } from "react";
+import { UserContext } from "../App";
 
 const NameContext = createContext();
 
@@ -47,12 +48,19 @@ const User4 = () => {
 };
 
 const User5 = () => {
-  const userName = useContext(NameContext)
+  const Unm = useContext(NameContext);
+  
+const {userName} = useContext(UserContext)
 
-  return(
+  return (
     <div>
-      <p>hello i'm {userName}</p>
+      <div>
+        <p>hello i'm {Unm}</p>
+      </div>
+      <div>
+        <p>Created by : - {userName}</p>
+      </div>
     </div>
   );
-}
+};
 export default memo(Memo);

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Todo from "./Todo";
+import { UserContext } from "../App";
 
 const Home = () => {
   const [Name, setName] = useState("");
@@ -113,6 +114,8 @@ const Home = () => {
     });
   };
 
+  const {userName} = useContext(UserContext)
+
   return (
     <>
       <div className="container mt-5 ">
@@ -198,6 +201,9 @@ const Home = () => {
           <button className="btn btn-danger" onClick={mulDel}>
             Multiple Delete
           </button>
+        </div>
+        <div>
+          <p>Created By : - {userName}</p>
         </div>
       </div>
     </>

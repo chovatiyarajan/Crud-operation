@@ -1,11 +1,9 @@
-import React, { useContext } from 'react'
-import { UserContext } from '../App'
+import React, {  } from 'react'
 
 const User5 = () => {
-    const Name = useContext(UserContext)
   return (
     <div>
-        i'm {Name} !!
+        i'm {"Rajan"} !!
     </div>
   )
 }

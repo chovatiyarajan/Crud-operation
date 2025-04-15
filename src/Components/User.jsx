@@ -12,7 +12,7 @@ const User = () => {
       </div>
       <div>
       </div>
-      <div className="my-10">
+      <div className="mx-10">
         <User1 />
       </div>
     </>

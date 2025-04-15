@@ -9,34 +9,35 @@ import Textarea from "./Components/Textarea";
 import Card from "./Components/Card";
 import Class from "./Components/Class";
 import Memo from "./Components/Memo";
-import Practice from "./Components/Practice"
+import Practice from "./Components/Practice";
 
 export const UserContext = createContext();
 
 const App = () => {
+  const [userName, setUserName] = useState("Rajan");
 
-   const [userName] = useState("Rjan");
+  // const data = { userName,  setUserName };
 
   return (
-    <div>
-      <UserContext.Provider value={userName}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navbar />}> 
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="contect" element={<Contect />} />
-            <Route path="user/:username" element={<User />} />
-            <Route path="class" element={<Class />} />
-            <Route path="textarea" element={<Textarea />} />
-            <Route path="card" element={<Card />} />
-            <Route path="memo" element={<Memo name="rajan " />} />
-            <Route path="practice" element={<Practice  />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-      </UserContext.Provider>
-    </div>
+    <UserContext.Provider value={{userName,setUserName}}>
+      <div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Navbar />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="contect" element={<Contect />} />
+              <Route path="user/:username" element={<User />} />
+              <Route path="class" element={<Class />} />
+              <Route path="textarea" element={<Textarea />} />
+              <Route path="card" element={<Card />} />
+              <Route path="memo" element={<Memo name="rajan " />} />
+              <Route path="practice" element={<Practice />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </UserContext.Provider>
   );
 };
 

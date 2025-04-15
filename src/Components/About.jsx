@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { UserContext } from "../App";
 
 const About = () => {
   const [url, setUrl] = useState("");
@@ -24,6 +25,8 @@ const About = () => {
   const setImg = () => {
     setSaveUrl(url);
   }
+
+  const {userName , setUserName } = useContext(UserContext)
   return (
     <div className="container mt-5">
       <div>
@@ -44,6 +47,7 @@ const About = () => {
         <button className="btn" onClick={setImg}>Get Img </button>
       </div>
       <div><img src={saveUrl} /></div>
+      <div>created by : - {userName}</div>
     </div>
   );
 };
