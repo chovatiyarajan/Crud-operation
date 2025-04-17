@@ -49,18 +49,20 @@ const User4 = () => {
 
 const User5 = () => {
   const Unm = useContext(NameContext);
-  
-const {userName} = useContext(UserContext)
+
+  const { userName } = useContext(UserContext);
 
   return (
-    <div>
+    <>
       <div>
-        <p>hello i'm {Unm}</p>
+        <div>
+          <p>hello i'm {Unm}</p>
+        </div>
+        <div className="flex justify-end px-3">
+          <p>Created by : - {userName}</p>
+        </div>
       </div>
-      <div>
-        <p>Created by : - {userName}</p>
-      </div>
-    </div>
+    </>
   );
 };
 export default memo(Memo);

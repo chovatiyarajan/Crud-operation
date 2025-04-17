@@ -21,7 +21,6 @@ const Demo = () => {
   return (
     <>
       <div className="container mt-2">
-        <Memo name="rajan" />
         <button className="btn btn-outline-dark" onClick={increment}>
           {num}
         </button>
@@ -82,6 +81,7 @@ const Demo = () => {
             </tbody>
           </table>
         </div>
+        <Memo name="rajan" />
       </div>
     </>
   );

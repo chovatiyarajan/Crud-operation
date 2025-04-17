@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { UserContext } from '../App';
 
 
 export default function Textarea(props) {
@@ -24,6 +25,8 @@ export default function Textarea(props) {
 
     const [txt, setTxt] = useState('');
 
+    const {userName} = useContext(UserContext)
+
     return (
         <>
             <h1>{props.title}</h1>
@@ -37,6 +40,9 @@ export default function Textarea(props) {
             <div className="container mt-4">
                 <h2>Total Words and Character</h2>
                 <p>There are Total {!!  txt.length ? txt.split(' ').length : 0} Words and {txt.length} Character</p>
+            </div>
+            <div className='flex justify-end px-3'>
+                <p>Created By : - {userName}</p>
             </div>
         </>
     )

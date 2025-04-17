@@ -2,12 +2,12 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../App";
 
 const Class = () => {
-  const [userName, setUsername] = useState();
+  const [userNm, setUsername] = useState();
   const [saveUname, setSaveUname] = useState("Plese Enter User Name");
-  const [removeUname, setRemoveUname] = useState("User removed");
+  const [removeUname] = useState("User removed");
 
   const getUname = () => {
-    setSaveUname(`Hello ${userName} to my first Rect Project!`);
+    setSaveUname(`Hello ${userNm} to my first Rect Project!`);
   };
 
   const removeUser = () => {
@@ -15,8 +15,7 @@ const Class = () => {
     setSaveUname(removeUname);
   };
 
-  const {useName} = useContext(UserContext)
-
+  const {userName} = useContext(UserContext)
   return (
     <div className="container mt-4">
       <div>
@@ -24,7 +23,7 @@ const Class = () => {
           className="form-control"
           type="text"
           onChange={(e) => setUsername(e.target.value)}
-          value={userName}
+          value={userNm}
         />
         <button className="btn btn-dark mt-2" onClick={getUname}>
           Get Your Name
@@ -40,7 +39,7 @@ const Class = () => {
       <div>
         <p className="mt-3 ">{saveUname}</p>
       </div>
-      <p>Created By : - {useName} </p>Z
+      <p>Created By : - {userName}</p>
     </div>
   );
 };
