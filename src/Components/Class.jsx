@@ -15,7 +15,7 @@ const Class = () => {
     setSaveUname(removeUname);
   };
 
-  const {userName} = useContext(UserContext)
+  const { userName } = useContext(UserContext);
   return (
     <div className="container mt-4">
       <div>
@@ -39,7 +39,9 @@ const Class = () => {
       <div>
         <p className="mt-3 ">{saveUname}</p>
       </div>
-      <p>Created By : - {userName}</p>
+      <div className="flex justify-end px-3 py-2">
+        <p>Created By : - {userName}</p>
+      </div>
     </div>
   );
 };

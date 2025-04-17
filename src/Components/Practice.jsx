@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Memo from "./Memo";
+import React, { useContext, useState } from "react";
+import { UserContext } from "../App";
 
 const Demo = () => {
   const [num, setNum] = useState(1);
@@ -18,6 +18,8 @@ const Demo = () => {
     setSubName(uName);
     setSubPass(pass);
   };
+
+  const {userName} = useContext(UserContext);
   return (
     <>
       <div className="container mt-2">
@@ -81,7 +83,9 @@ const Demo = () => {
             </tbody>
           </table>
         </div>
-        <Memo name="rajan" />
+        <div className="flex justify-end px-3 py-2">
+          <p>Creadted by : - {userName}</p>
+        </div>
       </div>
     </>
   );

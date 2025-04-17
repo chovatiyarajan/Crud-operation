@@ -23,13 +23,15 @@ const User1 = () => {
     <>
       <div>my name is {userName} !!</div>
       <div>
-        <button
-          onClick={changeUser}
-          className="py-2 px-3  bg-indigo-900 rounded-md text-white"
-        >
-          Change User !!
-        </button>
         <User2 />
+        <div className="flex justify-end py-3">
+          <button
+            onClick={changeUser}
+            className="py-2 px-3  bg-indigo-900 rounded-md text-white"
+          >
+            Change User !!
+          </button>
+        </div>
       </div>
     </>
   );

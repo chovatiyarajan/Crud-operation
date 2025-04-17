@@ -20,7 +20,7 @@ const Card = () => {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a className="btn btn-primary">
+              <a href="/" className="btn btn-primary">
                 Go somewhere
               </a>
             </div>
@@ -39,7 +39,7 @@ const Card = () => {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a className="btn btn-primary">
+              <a href="/" className="btn btn-primary">
                 Go somewhere
               </a>
             </div>
@@ -50,6 +50,7 @@ const Card = () => {
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBuR6SHiyjO8-ZSTWkRGQWlRRZhdUmIA4L9TCrCsfFq0F-V09H-S1IEexKqDjFxjnRAcY&usqp=CAU"
               className="card-img-top w-100"
+              alt="Card"
             />
             <div className="card-body">
               <h5 className="card-title">Card title</h5>
@@ -57,7 +58,7 @@ const Card = () => {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a className="btn btn-primary">
+              <a href="/" className="btn btn-primary">
                 Go somewhere
               </a>
             </div>
