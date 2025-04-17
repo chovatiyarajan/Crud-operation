@@ -10,6 +10,7 @@ import Card from "./Components/Card";
 import Class from "./Components/Class";
 import Memo from "./Components/Memo";
 import Practice from "./Components/Practice";
+import Ref from "./Components/Ref";
 
 export const UserContext = createContext();
 
@@ -33,6 +34,7 @@ const App = () => {
               <Route path="card" element={<Card />} />
               <Route path="memo" element={<Memo name="rajan " />} />
               <Route path="practice" element={<Practice />} />
+              <Route path="refCase" element={<Ref />} />
             </Route>
           </Routes>
         </BrowserRouter>
