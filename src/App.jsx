@@ -23,7 +23,7 @@ const App = () => {
     <UserContext.Provider value={{userName,setUserName}}>
       <div>
         <BrowserRouter>
-          <Routes>
+          <Routes>  
             <Route path="/" element={<Navbar />}>
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />

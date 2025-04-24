@@ -23,7 +23,7 @@ const Todo = ({
 
   return (
     <div>
-      <table className="table table-bordered table-dark">
+      <table className="table table-bordered table-dark table-responsive">
         <tbody>
           <tr className="text-center">
             <td>Enter User Name</td>
