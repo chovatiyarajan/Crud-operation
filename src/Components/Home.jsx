@@ -140,7 +140,8 @@ const Home = () => {
           {changName}
         </button>
       </div>
-        <table className="table table-bordered text-center table-responsive">
+      <div className="container mt-5 table-responsive">
+        <table className="table table-bordered text-center">
           <thead>
             <tr>
               <th>
@@ -204,6 +205,7 @@ const Home = () => {
         <div>
           <p>Created By : - {userName}</p>
         </div>
+      </div>
     </>
   );
 };
