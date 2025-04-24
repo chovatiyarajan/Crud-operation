@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div>
       <nav style={{ padding: '10px 20px', display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}} className='bg-black text-white'>
-        <NavLink className={(e) => e.isActive ? "bg-green-800 px-4 py-3" : "px-4 py-3"} to="/" >Home</NavLink>
+        <NavLink className={(e) => e.isActive ? "bg-green-800 px-4 py-3" : "px-4 py-3"} to="/" >To do Task</NavLink>
         <NavLink className={(e) => e.isActive ? "bg-green-800 px-4 py-3" : "px-4 py-3"} to="/about" >About</NavLink>
         <NavLink className={(e) => e.isActive ? "bg-green-800 px-4 py-3" : "px-4 py-3"} to="/contect" >Contect</NavLink>
         <NavLink className={(e) => e.isActive ? "bg-green-800 px-4 py-3" : "px-4 py-3"} to="/user/Rajan">User</NavLink>
