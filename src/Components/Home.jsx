@@ -141,7 +141,7 @@ const Home = () => {
         </button>
       </div>
       <div className="container mt-5">
-        <table className="table table-bordered text-center">
+        <table className="table table-bordered text-center table-responsive">
           <thead>
             <tr>
               <th>
