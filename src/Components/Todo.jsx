@@ -62,7 +62,7 @@ const Todo = ({
           </tr>
           <tr className="text-center">
             <td>Select Gender</td>
-            <td className="d-flex " style={{ justifyContent: "space-around" }}>
+            <td className=" sm:flex justify-center">
               <div>
                 <input
                   type="radio"
@@ -70,7 +70,7 @@ const Todo = ({
                   value="Male"
                   checked={gen === "Male"}
                   name="gender"
-                  onChange={(e) => setGen(e.target.value)}
+                  onChange={(e) => setGen(e.target.value)}  
                 />
                 <label htmlFor="Male" style={{ margin: "0px 10px" }}>
                   Male
@@ -93,7 +93,7 @@ const Todo = ({
           </tr>
           <tr className="text-center">
             <td>Enter your Hobby</td>
-            <td className="d-flex " style={{ justifyContent: "space-around" }}>
+            <td className="sm:flex " style={{ justifyContent: "space-around" }}>
               <div>
                 <input
                   type="checkbox"

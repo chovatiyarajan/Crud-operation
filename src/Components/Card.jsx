@@ -1,11 +1,45 @@
-import React, { useContext } from "react";
+import React, { useContext, useReducer } from "react";
 import { UserContext } from "../App";
 
 const Card = () => {
   const { userName } = useContext(UserContext);
 
+  const reducer = (state, action) => {
+    if (action.type === "Ince") {
+      console.log(state + 1, action);
+      return state + 1;
+    }
+    if (action.type === "Dec") {
+      console.log(state - 1, action);
+      return state - 1;
+    }
+  };
+
+  const [count, dispatch] = useReducer(reducer, 0);
+
   return (
     <>
+      <div className="mx-4 my-2 flex space-x-4 justify-center">
+        <button
+          className="btn"
+          onClick={() => {
+            dispatch({ type: "Ince" });
+          }}
+        >
+          Increment
+        </button>
+        <button
+          className="btn"
+          onClick={() => {
+            dispatch({ type: "Dec" });
+          }}
+        >
+          Decrement
+        </button>
+      </div>
+      <div className="text-4xl text-center">
+        <h1>Value : {count}</h1>
+      </div>
       <div className="d-flex">
         <div className="w-25 m-5">
           <div className="card">
