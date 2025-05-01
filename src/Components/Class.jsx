@@ -15,7 +15,8 @@ const Class = () => {
     setSaveUname(removeUname);
   };
 
-  const { userName } = useContext(UserContext);
+  const { userName, num, dispatch } = useContext(UserContext);
+
   return (
     <div className="container mt-4">
       <div>
@@ -41,6 +42,25 @@ const Class = () => {
       </div>
       <div className="flex justify-end px-3 py-2">
         <p>Created By : - {userName}</p>
+      </div>
+      <div className="text-4xl">value : {num}</div>
+      <div>
+        <button
+          className="btn btn-dark"
+          onClick={() => {
+            dispatch({ type: "Inc" });
+          }}
+        >
+          Increment
+        </button>
+        <button
+          className="btn btn-dark"
+          onClick={() => {
+            dispatch({ type: "Dec" });
+          }}
+        >
+          Decrement
+        </button>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../App";
 
 const PromiseDemo = () => {
   const demoFunc = async () => {
@@ -27,9 +28,30 @@ const PromiseDemo = () => {
 
   main();
 
+  const {num,dispatch} = useContext(UserContext);
+
   return (
     <>
       <div className="mt-4"> this component working in console.log </div>
+      <div className="text-4xl">value : {num}</div>
+      <div>
+        <button
+          className="btn btn-dark"
+          onClick={() => {
+            dispatch({ type: "Inc" });
+          }}
+        >
+          Increment
+        </button>
+        <button
+          className="btn btn-dark"
+          onClick={() => {
+            dispatch({ type: "Dec" });
+          }}
+        >
+          Decrement
+        </button>
+      </div>
     </>
   );
 };
