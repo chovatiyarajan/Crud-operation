@@ -11,6 +11,7 @@ import Class from "./Components/Class";
 import Memo from "./Components/Memo";
 import Practice from "./Components/Practice";
 import Ref from "./Components/Ref";
+import PromiseDemo from "./Components/PromiseDemo";
 
 export const UserContext = createContext();
 
@@ -35,6 +36,7 @@ const App = () => {
               <Route path="memo" element={<Memo name="rajan " />} />
               <Route path="practice" element={<Practice />} />
               <Route path="refCase" element={<Ref />} />
+              <Route path="promise" element={<PromiseDemo />} />
             </Route>
           </Routes>
         </BrowserRouter>
