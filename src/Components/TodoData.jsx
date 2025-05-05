@@ -1,5 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../App";
+import { NavLink, Outlet } from "react-router-dom";
+import { jsPDF } from "jspdf";
+import autoTable from "jspdf-autotable";
 
 const TodoData = () => {
   const [stateData, setStateData] = useState([]);
@@ -13,7 +16,37 @@ const TodoData = () => {
 
   const { main } = useContext(UserContext);
 
-  console.log(main);
+  // console.log(main);
+
+  const generatePDF = () => {
+    const doc = new jsPDF();
+
+    // First Table: LocalStorage Data
+    doc.text("LocalStorage Todo Data", 10, 10);
+    autoTable(doc, {
+      startY: 15,
+      head: [["No.", "Name", "Address", "Password", "Gender", "Hobby"]],
+      body: stateData.map((ele, i) => [
+        i + 1,
+        ele.userName,
+        ele.userAddress,
+        ele.userPassword,
+        ele.userGender,
+        ele.userHobby,
+      ]),
+    });
+
+    // Second Table: useReducer Context Data
+    const secondTableY = doc.lastAutoTable.finalY + 10;
+    doc.text("useReducer + Context Data", 10, secondTableY);
+    autoTable(doc, {
+      startY: secondTableY + 5,
+      head: [["No.", "Name", "Surname"]],
+      body: main.map((ele, i) => [i + 1, ele.userName, ele.userSurname]),
+    });
+
+    doc.save("Data.pdf");
+  };
 
   return (
     <div className="mt-5 px-5">
@@ -47,6 +80,11 @@ const TodoData = () => {
           })}
         </tbody>
       </table>
+      <div className="flex justify-end px-5">
+        <NavLink className="btn btn-dark " to="/">
+          Make some changes
+        </NavLink>
+      </div>
 
       <div className="text-4xl text-center my-12">
         <p>This is second Todo data using useReducer and useContext</p>
@@ -61,20 +99,31 @@ const TodoData = () => {
             </tr>
           </thead>
           <tbody>
-            {
-              main.map((ele , index) => {
-                return(
-                  <tr>
-                    <td>{index}</td>
-                    <td>{ele.userName}</td>
-                    <td>{ele.userSurname}</td>
-                  </tr>
-                );
-              })
-            }
+            {main.map((ele, index) => {
+              return (
+                <tr>
+                  <td>{index}</td>
+                  <td>{ele.userName}</td>
+                  <td>{ele.userSurname}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
+      <div className="flex justify-end px-5">
+        <NavLink className="btn btn-dark " to="/reducer">
+          add some data
+        </NavLink>
+      </div>
+
+      <div className="flex justify-center my-10">
+        <button onClick={generatePDF} className="btn btn-primary mt-4 py-2 px-3">
+          Generate PDF
+        </button>
+      </div>
+
+      <Outlet />
     </div>
   );
 };
