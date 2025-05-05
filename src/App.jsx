@@ -17,28 +17,58 @@ import TodoData from "./Components/TodoData";
 
 export const UserContext = createContext();
 
-const reducer = (state , action) => {
-  if(action.type === "Inc"){
+const reducer = (state, action) => {
+  if (action.type === "Inc") {
     console.log(state);
-   return state + 1;
+    return state + 1;
   }
-  if(action.type === "Dec"){
+  if (action.type === "Dec") {
     console.log(state);
     return state - 1;
   }
-}
+};
+
+const reducer1 = (state, action) => {
+  switch (action.type) {
+    case "ADD":
+      return [...state, action.data];
+    case "UPDATE":
+      return state.map((ele, inx) => {
+        if (inx === action.index) {
+          return action.data;
+        }
+        return ele;
+      });
+    case "DELETE":
+      return state.filter((ele, inx) => action.indx !== inx);
+
+    default:
+      return state;
+  }
+};
+
 
 const App = () => {
+  const [main, dispatch] = useReducer(reducer1, []);
   const [userName, setUserName] = useState("Rajan");
-
-  // const data = { userName,  setUserName };
 
   const [number, setNumber] = useState(0);
 
-  const [num, dispatch] = useReducer(reducer, 0);
+  const [num, dispatch1] = useReducer(reducer, 0);
 
   return (
-    <UserContext.Provider value={{ userName, setUserName, number, setNumber ,  num ,  dispatch }}>
+    <UserContext.Provider
+      value={{
+        userName,
+        setUserName,
+        number,
+        setNumber,
+        num,
+        dispatch1,
+        main,
+        dispatch,
+      }}
+    >
       <div>
         <BrowserRouter>
           <Routes>

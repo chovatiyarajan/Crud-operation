@@ -1,29 +1,12 @@
-import React, { useReducer, useRef, useState } from "react";
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "ADD":
-      return [...state, action.data];
-    case "UPDATE":
-      return state.map((ele, inx) => {
-        if (inx === action.index) {
-          return action.data;
-        }
-        return ele;
-      });
-    case "DELETE":
-      return state.filter((ele, inx) => action.indx !== inx);
-
-    default:
-      return state;
-  }
-};
+import React, { useContext, useRef, useState } from "react";
+import { UserContext } from "../App";
 
 const Reducer = () => {
-  const [main, dispatch] = useReducer(reducer, []);
   const [username, setUsername] = useState("");
   const [usersurname, setUserSurname] = useState("");
   const [Ind, setInd] = useState();
+
+  const { main, dispatch } = useContext(UserContext);
 
   const setUserData = () => {
     if (username.trim() === "" || usersurname.trim() === "") {
@@ -71,8 +54,6 @@ const Reducer = () => {
 
   length.current = main.length;
 
-  console.log(length);
-
   return (
     <>
       <table className="w-full mt-4 bg-gray-900">
@@ -109,6 +90,7 @@ const Reducer = () => {
       <table className="table table-dark table-striped table-hover ">
         <thead className="thead text-center !p-10">
           <tr>
+            <th>No</th>
             <th>Name</th>
             <th>Surname</th>
             <th>action</th>
@@ -143,6 +125,7 @@ const Reducer = () => {
       <div className="flex justify-end px-3 mt-4">
         <h1 className="text-4xl font-bold">This todo is done with useRedcer</h1>
       </div>
+      
     </>
   );
 };
