@@ -12,6 +12,8 @@ import Memo from "./Components/Memo";
 import Practice from "./Components/Practice";
 import Ref from "./Components/Ref";
 import PromiseDemo from "./Components/PromiseDemo";
+import Reduser from "./Components/Reduser";
+import TodoData from "./Components/TodoData";
 
 export const UserContext = createContext();
 
@@ -52,6 +54,8 @@ const App = () => {
               <Route path="practice" element={<Practice />} />
               <Route path="refCase" element={<Ref />} />
               <Route path="promise" element={<PromiseDemo />} />
+              <Route path="reducer" element={<Reduser />} />
+              <Route path="tododata" element={<TodoData />} />
             </Route>
           </Routes>
         </BrowserRouter>

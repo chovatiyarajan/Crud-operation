@@ -17,6 +17,8 @@ const Navbar = () => {
         <NavLink className={(e) => e.isActive ? "bg-green-800 px-4 py-3" : "px-4 py-3"} to="/practice">Practice</NavLink>
         <NavLink className={(e) => e.isActive ? "bg-green-800 px-4 py-3" : "px-4 py-3"} to="/refCase">UseRef</NavLink>
         <NavLink className={(e) => e.isActive ? "bg-green-800 px-4 py-3" : "px-4 py-3"} to="/promise">Promise</NavLink>
+        <NavLink className={(e) => e.isActive ? "bg-green-800 px-4 py-3" : "px-4 py-3"} to="/reducer">useReducer</NavLink>
+        <NavLink className={(e) => e.isActive ? "bg-green-800 px-4 py-3" : "px-4 py-3"} to="/tododata">All Data</NavLink>
       </nav>
       <Outlet />
     </div>

@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../App";
 
 const Class = () => {
-  const [userNm, setUsername] = useState();
+  const [userNm, setUsername] = useState("");
   const [saveUname, setSaveUname] = useState("Plese Enter User Name");
   const [removeUname] = useState("User removed");
 
