@@ -3,7 +3,7 @@ import { UserContext } from "../App";
 
 const About = () => {
   const [url, setUrl] = useState("");
-  const [saveUrl,setSaveUrl] = useState("");
+  const [saveUrl,setSaveUrl] = useState();
 
   const [car, setCar] = useState({
     Name: "mustang",
@@ -23,10 +23,10 @@ const About = () => {
   };
 
   const setImg = () => {
-    setSaveUrl(url);
+    console.log(saveUrl)
   }
 
-  const {userName , setUserName } = useContext(UserContext)
+  const {userName } = useContext(UserContext)
   return (
     <div className="container mt-5">
       <div>

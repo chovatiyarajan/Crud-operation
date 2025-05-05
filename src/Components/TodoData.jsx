@@ -37,8 +37,8 @@ const TodoData = () => {
     });
 
     // Second Table: useReducer Context Data
-    const secondTableY = doc.lastAutoTable.finalY + 10;
-    doc.text("useReducer + Context Data", 10, secondTableY);
+    const secondTableY = doc.lastAutoTable.finalY + 20;
+    doc.text("useReducer + useContext", 10, secondTableY);
     autoTable(doc, {
       startY: secondTableY + 5,
       head: [["No.", "Name", "Surname"]],
