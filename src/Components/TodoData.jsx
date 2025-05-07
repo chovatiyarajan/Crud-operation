@@ -21,7 +21,6 @@ const TodoData = () => {
   const generatePDF = () => {
     const doc = new jsPDF();
 
-    // First Table: LocalStorage Data
     doc.text("LocalStorage Todo Data", 10, 10);
     autoTable(doc, {
       startY: 15,
@@ -36,7 +35,6 @@ const TodoData = () => {
       ]),
     });
 
-    // Second Table: useReducer Context Data
     const secondTableY = doc.lastAutoTable.finalY + 20;
     doc.text("useReducer + useContext", 10, secondTableY);
     autoTable(doc, {

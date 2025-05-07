@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import { UserContext } from "../App";
+import Callback from "./Callback";
 
 const Reducer = () => {
   const [username, setUsername] = useState("");
@@ -124,6 +125,10 @@ const Reducer = () => {
       </table>
       <div className="flex justify-end px-3 mt-4">
         <h1 className="text-4xl font-bold">This todo is done with useRedcer</h1>
+      </div>
+
+      <div>
+        <Callback />
       </div>
       
     </>
