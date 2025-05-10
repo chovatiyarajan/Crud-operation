@@ -5,13 +5,13 @@ import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 
 const TodoData = () => {
-  const [stateData, setStateData] = useState([]);
-
+ const [stateData, setStateData] = useState([]);
+  
   useEffect(() => {
     const storegeData = JSON.parse(localStorage.getItem("Data"));
     setStateData([...storegeData]);
   }, []);
-
+  
   // console.log(stateData);
 
   const { main } = useContext(UserContext);
@@ -100,7 +100,7 @@ const TodoData = () => {
             {main.map((ele, index) => {
               return (
                 <tr>
-                  <td>{index}</td>
+                  <td>{index + 1}</td>
                   <td>{ele.userName}</td>
                   <td>{ele.userSurname}</td>
                 </tr>
@@ -125,5 +125,6 @@ const TodoData = () => {
     </div>
   );
 };
+
 
 export default TodoData;
