@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../App";
-import Class from "./ Class";
+import Class from "./Class";
 
 const About = () => {
   const [url, setUrl] = useState("");
