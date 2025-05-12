@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../App";
+import Memo from "./Memo"
 
 const Demo = () => {
   const [num, setNum] = useState(1);
@@ -87,6 +88,7 @@ const Demo = () => {
           <p>Creadted by : - {userName}</p>
         </div>
       </div>
+      <Memo />
     </>
   );
 };

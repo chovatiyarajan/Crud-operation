@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../App";
+import Class from "./ Class";
 
 const About = () => {
   const [url, setUrl] = useState("");
-  const [saveUrl,setSaveUrl] = useState();
+  const [saveUrl] = useState();
 
   const [car, setCar] = useState({
     Name: "mustang",
@@ -19,6 +20,7 @@ const About = () => {
   };
 
   const getUrl = (val) => {
+    console.log(url)
     setUrl(val);
   };
 
@@ -44,10 +46,11 @@ const About = () => {
           className="form-control form-control-sm"
           onChange={(e) => getUrl(e.target.value)}
         />
-        <button className="btn" onClick={setImg}>Get Img </button>
+        <button className="btn btn-dark my-2" onClick={setImg}>Get Img </button>
       </div>
-      <div><img src={saveUrl} /></div>
+      <div><img src={saveUrl} alt=""/></div>
       <div>created by : - {userName}</div>
+      <Class />
     </div>
   );
 };
