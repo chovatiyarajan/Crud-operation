@@ -12,7 +12,8 @@ import Ref from "./Components/Ref";
 import PromiseDemo from "./Components/PromiseDemo";
 import Reduser from "./Components/Reduser";
 import TodoData from "./Components/TodoData";
-import Form from "./Components/Form";
+// import Form from "./Components/Form";
+import ZodForm from "./Components/ZodForm";
 // import Callback from "./Components/Callback";
 
 export const UserContext = createContext();
@@ -83,7 +84,7 @@ const App = () => {
               <Route path="refCase" element={<Ref />} />
               <Route path="promise" element={<PromiseDemo />} />
               <Route path="reducer" element={<Reduser />} />
-              <Route path="form" element={<Form />} />
+              <Route path="form" element={<ZodForm />} />
               <Route path="tododata" element={<TodoData />} />
             </Route>
           </Routes>

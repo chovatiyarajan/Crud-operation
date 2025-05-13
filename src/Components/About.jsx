@@ -4,7 +4,7 @@ import Class from "./Class";
 
 const About = () => {
   const [url, setUrl] = useState("");
-  const [saveUrl] = useState();
+  const [imgUrl, setImgurl] = useState();
 
   const [car, setCar] = useState({
     Name: "mustang",
@@ -19,14 +19,14 @@ const About = () => {
     });
   };
 
-  const getUrl = (val) => {
-    console.log(url)
-    setUrl(val);
-  };
+  // const getUrl = (val) => {
+  //   console.log(url)
+  //   setUrl(val);
+  // };
 
-  const setImg = () => {
-    console.log(saveUrl)
-  }
+  // const setImg = () => {
+  //   console.log(saveUrl)
+  // }
 
   const {userName } = useContext(UserContext)
   return (
@@ -44,11 +44,11 @@ const About = () => {
           type="text"
           placeholder="enter url of img"
           className="form-control form-control-sm"
-          onChange={(e) => getUrl(e.target.value)}
+          onChange={(e) => setUrl(e.target.value)}
         />
-        <button className="btn btn-dark my-2" onClick={setImg}>Get Img </button>
+        <button className="btn btn-dark my-2" onClick={() => setImgurl(url)}>Get Img </button>
       </div>
-      <div><img src={saveUrl} alt=""/></div>
+      <div><img src={imgUrl} alt=""/></div>
       <div>created by : - {userName}</div>
       <Class />
     </div>
