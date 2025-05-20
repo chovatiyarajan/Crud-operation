@@ -12,8 +12,9 @@ import Ref from "./Components/Ref";
 import PromiseDemo from "./Components/PromiseDemo";
 import Reduser from "./Components/Reduser";
 import TodoData from "./Components/TodoData";
-// import Form from "./Components/Form";
 import ZodForm from "./Components/ZodForm";
+import CustomHooks from "./Components/CustomHooks";
+// import Form from "./Components/Form";
 // import Callback from "./Components/Callback";
 
 export const UserContext = createContext();
@@ -42,7 +43,6 @@ const reducer1 = (state, action) => {
       });
     case "DELETE":
       return state.filter((ele, inx) => action.indx !== inx);
-
     default:
       return state;
   }
@@ -86,6 +86,7 @@ const App = () => {
               <Route path="reducer" element={<Reduser />} />
               <Route path="form" element={<ZodForm />} />
               <Route path="tododata" element={<TodoData />} />
+              <Route path="customhooks" element={<CustomHooks />} />
             </Route>
           </Routes>
         </BrowserRouter>
